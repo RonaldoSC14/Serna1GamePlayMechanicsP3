@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum PowerUpType
 {
-    None,Pushback, Rockets
+    None, Pushback, Rockets, Smash
 }
 
 public class PowerUp : MonoBehaviour
