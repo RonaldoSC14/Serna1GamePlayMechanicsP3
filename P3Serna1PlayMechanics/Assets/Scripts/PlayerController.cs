@@ -113,14 +113,14 @@ public class PlayerController : MonoBehaviour
         {
 
             //move the player up while still keeping their x velocity.
-            playerRb.velocity = new Vector2(playerRb.velocity.x, smashSpeed);
+            playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, smashSpeed);
             yield return null;
         }
 
         //Now move the player down
         while(transform.position.y > floorY)
         {
-            playerRb.velocity = new Vector2(playerRb.velocity.x, -smashSpeed * 2);
+            playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, -smashSpeed * 2);
             yield return null;
         }
 
