@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class EnemyX : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 100;
     private Rigidbody enemyRb;
     private GameObject playerGoal;
+    private float speedModifier = 25.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
+        playerGoal = GameObject.Find("Player Goal");
     }
 
     // Update is called once per frame
@@ -35,6 +37,11 @@ public class EnemyX : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    public void IncreaseSpeedByWave(int waveCount)
+    {
+        speed += speedModifier * waveCount;
     }
 
 }
